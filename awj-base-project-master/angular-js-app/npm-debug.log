@@ -1,0 +1,242 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'http-server' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose config Skipping project config: C:\Users\Robert/.npmrc. (matches userconfig)
+5 verbose install initial load of C:\Users\Robert\package.json
+6 verbose installManyTop reading scoped package data from C:\Users\Robert\node_modules\http-server\package.json
+7 verbose readDependencies loading dependencies from C:\Users\Robert\package.json
+8 verbose install http-server is installed as 0.8.5
+9 silly cache add args [ 'http-server', null ]
+10 verbose cache add spec http-server
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'http-server',
+11 silly cache add   scope: null,
+11 silly cache add   name: 'http-server',
+11 silly cache add   rawSpec: '',
+11 silly cache add   spec: '*',
+11 silly cache add   type: 'range' }
+12 silly addNamed http-server@*
+13 verbose addNamed "*" is a valid semver range for http-server
+14 silly addNameRange { name: 'http-server', range: '*', hasData: false }
+15 silly mapToRegistry name http-server
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/http-server
+19 verbose addNameRange registry:https://registry.npmjs.org/http-server not in flight; fetching
+20 verbose request uri https://registry.npmjs.org/http-server
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 9:38:34 PM
+23 verbose request id 88ef9ff00996bd5c
+24 verbose etag "5JOK36UVSFRH5764XIG4QDX3U"
+25 http request GET https://registry.npmjs.org/http-server
+26 http 304 https://registry.npmjs.org/http-server
+27 verbose headers { date: 'Tue, 10 Nov 2015 19:38:34 GMT',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   'cache-control': 'max-age=60',
+27 verbose headers   etag: '"5JOK36UVSFRH5764XIG4QDX3U"',
+27 verbose headers   age: '40',
+27 verbose headers   connection: 'keep-alive',
+27 verbose headers   'x-served-by': 'cache-fra1242-FRA',
+27 verbose headers   'x-cache': 'HIT',
+27 verbose headers   'x-cache-hits': '2',
+27 verbose headers   'x-timer': 'S1447184314.989600,VS0,VE0',
+27 verbose headers   vary: 'Accept' }
+28 silly get cb [ 304,
+28 silly get   { date: 'Tue, 10 Nov 2015 19:38:34 GMT',
+28 silly get     via: '1.1 varnish',
+28 silly get     'cache-control': 'max-age=60',
+28 silly get     etag: '"5JOK36UVSFRH5764XIG4QDX3U"',
+28 silly get     age: '40',
+28 silly get     connection: 'keep-alive',
+28 silly get     'x-served-by': 'cache-fra1242-FRA',
+28 silly get     'x-cache': 'HIT',
+28 silly get     'x-cache-hits': '2',
+28 silly get     'x-timer': 'S1447184314.989600,VS0,VE0',
+28 silly get     vary: 'Accept' } ]
+29 verbose etag https://registry.npmjs.org/http-server from cache
+30 verbose get saving http-server to C:\Users\Robert\AppData\Roaming\npm-cache\registry.npmjs.org\http-server\.cache.json
+31 silly addNameRange number 2 { name: 'http-server', range: '*', hasData: true }
+32 silly addNameRange versions [ 'http-server',
+32 silly addNameRange   [ '0.1.0',
+32 silly addNameRange     '0.1.1',
+32 silly addNameRange     '0.1.3',
+32 silly addNameRange     '0.2.1',
+32 silly addNameRange     '0.2.2',
+32 silly addNameRange     '0.2.3',
+32 silly addNameRange     '0.2.4',
+32 silly addNameRange     '0.2.5',
+32 silly addNameRange     '0.2.6',
+32 silly addNameRange     '0.2.9',
+32 silly addNameRange     '0.3.0',
+32 silly addNameRange     '0.4.0',
+32 silly addNameRange     '0.4.1',
+32 silly addNameRange     '0.5.0',
+32 silly addNameRange     '0.5.1',
+32 silly addNameRange     '0.5.2',
+32 silly addNameRange     '0.5.3',
+32 silly addNameRange     '0.5.5',
+32 silly addNameRange     '0.6.0',
+32 silly addNameRange     '0.6.1',
+32 silly addNameRange     '0.7.0',
+32 silly addNameRange     '0.7.1',
+32 silly addNameRange     '0.7.2',
+32 silly addNameRange     '0.7.3',
+32 silly addNameRange     '0.7.4',
+32 silly addNameRange     '0.7.5',
+32 silly addNameRange     '0.8.0',
+32 silly addNameRange     '0.8.1',
+32 silly addNameRange     '0.8.2',
+32 silly addNameRange     '0.8.3',
+32 silly addNameRange     '0.8.4',
+32 silly addNameRange     '0.8.5' ] ]
+33 silly addNamed http-server@0.8.5
+34 verbose addNamed "0.8.5" is a plain semver version for http-server
+35 silly cache afterAdd http-server@0.8.5
+36 verbose afterAdd C:\Users\Robert\AppData\Roaming\npm-cache\http-server\0.8.5\package\package.json not in flight; writing
+37 verbose afterAdd C:\Users\Robert\AppData\Roaming\npm-cache\http-server\0.8.5\package\package.json written
+38 silly install resolved [ { name: 'http-server',
+38 silly install resolved     version: '0.8.5',
+38 silly install resolved     description: 'A simple zero-configuration command-line http server',
+38 silly install resolved     main: './lib/http-server',
+38 silly install resolved     repository:
+38 silly install resolved      { type: 'git',
+38 silly install resolved        url: 'git://github.com/indexzero/http-server.git' },
+38 silly install resolved     keywords: [ 'cli', 'command' ],
+38 silly install resolved     scripts:
+38 silly install resolved      { start: 'node ./bin/http-server',
+38 silly install resolved        pretest: 'common bin/http-server lib/ test',
+38 silly install resolved        test: 'vows --spec --isolate' },
+38 silly install resolved     contributors:
+38 silly install resolved      [ [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object],
+38 silly install resolved        [Object] ],
+38 silly install resolved     dependencies:
+38 silly install resolved      { colors: '1.0.3',
+38 silly install resolved        optimist: '0.6.x',
+38 silly install resolved        union: '~0.4.3',
+38 silly install resolved        ecstatic: '~0.7.0',
+38 silly install resolved        'http-proxy': '^1.8.1',
+38 silly install resolved        portfinder: '0.4.x',
+38 silly install resolved        opener: '~1.4.0',
+38 silly install resolved        corser: '~2.0.0' },
+38 silly install resolved     devDependencies: { 'common-style': '^3.0.0', request: '2.49.x', vows: '0.7.x' },
+38 silly install resolved     bugs: { url: 'https://github.com/nodeapps/http-server/issues' },
+38 silly install resolved     license: 'MIT',
+38 silly install resolved     preferGlobal: 'true',
+38 silly install resolved     bin: { 'http-server': './bin/http-server', hs: './bin/http-server' },
+38 silly install resolved     gitHead: 'b8975be281a5705e71218597940e53034ebe41d4',
+38 silly install resolved     homepage: 'https://github.com/indexzero/http-server#readme',
+38 silly install resolved     _id: 'http-server@0.8.5',
+38 silly install resolved     _shasum: 'bbf27c9f09499e51a1fe1f979a6f39a45a04f2fb',
+38 silly install resolved     _from: 'http-server@*',
+38 silly install resolved     _npmVersion: '2.14.5',
+38 silly install resolved     _nodeVersion: '0.12.7',
+38 silly install resolved     _npmUser: { name: 'indexzero', email: 'charlie.robbins@gmail.com' },
+38 silly install resolved     maintainers: [ [Object] ],
+38 silly install resolved     dist:
+38 silly install resolved      { shasum: 'bbf27c9f09499e51a1fe1f979a6f39a45a04f2fb',
+38 silly install resolved        tarball: 'http://registry.npmjs.org/http-server/-/http-server-0.8.5.tgz' },
+38 silly install resolved     directories: {},
+38 silly install resolved     _resolved: 'https://registry.npmjs.org/http-server/-/http-server-0.8.5.tgz',
+38 silly install resolved     readme: 'ERROR: No README data found!' } ]
+39 info install http-server@0.8.5 into C:\Users\Robert
+40 info installOne http-server@0.8.5
+41 verbose installOne of http-server to C:\Users\Robert not in flight; installing
+42 verbose lock using C:\Users\Robert\AppData\Roaming\npm-cache\_locks\http-server-5fcdfe32225187b4.lock for C:\Users\Robert\node_modules\http-server
+43 silly install write writing http-server 0.8.5 to C:\Users\Robert\node_modules\http-server
+44 verbose unbuild node_modules\http-server
+45 info preuninstall http-server@0.8.5
+46 info uninstall http-server@0.8.5
+47 verbose unbuild rmStuff http-server@0.8.5 from C:\Users\Robert\node_modules
+48 silly gentlyRm C:\Users\Robert\node_modules\.bin\http-server.cmd is being gently removed
+49 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+50 silly gentlyRm C:\Users\Robert\node_modules\.bin\hs.cmd is being gently removed
+51 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+52 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+53 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\http-server.cmd is under C:\Users\Robert
+54 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\http-server.cmd up to C:\Users\Robert
+55 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+56 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\hs.cmd is under C:\Users\Robert
+57 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\hs.cmd up to C:\Users\Robert
+58 silly vacuum-fs removing C:\Users\Robert\node_modules\.bin\http-server.cmd
+59 silly vacuum-fs removing C:\Users\Robert\node_modules\.bin\hs.cmd
+60 silly vacuum-fs quitting because other entries in C:\Users\Robert\node_modules\.bin
+61 silly gentlyRm C:\Users\Robert\node_modules\.bin\http-server is being gently removed
+62 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+63 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+64 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\http-server is under C:\Users\Robert
+65 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\http-server up to C:\Users\Robert
+66 silly vacuum-fs quitting because other entries in C:\Users\Robert\node_modules\.bin
+67 silly gentlyRm C:\Users\Robert\node_modules\.bin\hs is being gently removed
+68 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+69 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+70 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\hs is under C:\Users\Robert
+71 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\hs up to C:\Users\Robert
+72 silly vacuum-fs removing C:\Users\Robert\node_modules\.bin\http-server
+73 silly vacuum-fs removing C:\Users\Robert\node_modules\.bin\hs
+74 silly vacuum-fs removing C:\Users\Robert\node_modules\.bin
+75 silly vacuum-fs removing C:\Users\Robert\node_modules\.bin
+76 silly vacuum-fs unable to remove C:\Users\Robert\node_modules\.bin due to EPERM: operation not permitted, rmdir 'C:\Users\Robert\node_modules\.bin'
+77 silly vacuum-fs quitting because other entries in C:\Users\Robert\node_modules
+78 verbose unlock done using C:\Users\Robert\AppData\Roaming\npm-cache\_locks\http-server-5fcdfe32225187b4.lock for C:\Users\Robert\node_modules\http-server
+79 verbose stack Error: EPERM: operation not permitted, rmdir 'C:\Users\Robert\node_modules\.bin'
+79 verbose stack     at Error (native)
+80 verbose cwd C:\Users\Robert\Desktop\AWJ\awj-base-project-master\angular-js-app
+81 error Windows_NT 10.0.10240
+82 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "http-server"
+83 error node v4.2.2
+84 error npm  v2.14.7
+85 error path C:\Users\Robert\node_modules\.bin
+86 error code EPERM
+87 error errno -4048
+88 error syscall rmdir
+89 error Error: EPERM: operation not permitted, rmdir 'C:\Users\Robert\node_modules\.bin'
+89 error     at Error (native)
+89 error  { [Error: EPERM: operation not permitted, rmdir 'C:\Users\Robert\node_modules\.bin']
+89 error   errno: -4048,
+89 error   code: 'EPERM',
+89 error   syscall: 'rmdir',
+89 error   path: 'C:\\Users\\Robert\\node_modules\\.bin' }
+90 error Please try running this command again as root/Administrator.
+91 verbose exit [ -4048, true ]
+92 verbose unbuild node_modules\http-server
+93 info preuninstall http-server@0.8.5
+94 info uninstall http-server@0.8.5
+95 verbose unbuild rmStuff http-server@0.8.5 from C:\Users\Robert\node_modules
+96 silly gentlyRm C:\Users\Robert\node_modules\.bin\http-server.cmd is being gently removed
+97 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+98 silly gentlyRm C:\Users\Robert\node_modules\.bin\hs.cmd is being gently removed
+99 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+100 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+101 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\http-server.cmd is under C:\Users\Robert
+102 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\http-server.cmd up to C:\Users\Robert
+103 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+104 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\hs.cmd is under C:\Users\Robert
+105 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\hs.cmd up to C:\Users\Robert
+106 silly gentlyRm C:\Users\Robert\node_modules\.bin\http-server is being gently removed
+107 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+108 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+109 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\http-server is under C:\Users\Robert
+110 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\http-server up to C:\Users\Robert
+111 silly gentlyRm C:\Users\Robert\node_modules\.bin\hs is being gently removed
+112 silly gentlyRm verifying C:\Users\Robert is an npm working directory
+113 silly gentlyRm containing path C:\Users\Robert is under npm's control, in C:\Users\Robert
+114 silly gentlyRm deletion target C:\Users\Robert\node_modules\.bin\hs is under C:\Users\Robert
+115 verbose gentlyRm vacuuming from C:\Users\Robert\node_modules\.bin\hs up to C:\Users\Robert
+116 info postuninstall http-server@0.8.5
+117 silly gentlyRm C:\Users\Robert\node_modules\http-server is being purged from base C:\Users\Robert
+118 verbose gentlyRm don't care about contents; nuking C:\Users\Robert\node_modules\http-server
+119 silly vacuum-fs purging C:\Users\Robert\node_modules\http-server
+120 silly vacuum-fs removing C:\Users\Robert\node_modules
+121 silly vacuum-fs finished vacuuming up to C:\Users\Robert
