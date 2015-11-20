@@ -52,15 +52,26 @@ public class ProdusController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/produs", method = RequestMethod.POST)
-  public void addProdus(Produs prod){
-    produse.add(prod);
+  @RequestMapping(value="/produs/{id}/{denumire}/{furnizor}", method = RequestMethod.POST)
+  public ResponseEntity addProdus(@PathVariable("id") int id,
+                                @PathVariable("denumire") String denumire,
+                                @PathVariable("furnizor") String furnizor){
+    Produs p = new Produs(id, denumire, furnizor);
+    produse.add(p);
+
+    return new ResponseEntity<Produs>(p, new HttpHeaders(), HttpStatus.OK);
   }
 
   @RequestMapping(value="/produs/{id}", method = RequestMethod.PUT)
-  public void putProdus(@PathVariable("id") int id, Produs prod){
-    prod.setId(id);
-  //produse.update(prod);
+  public ResponseEntity putProdus(@PathVariable("id") int id){
+    for(Produs p : this.produse) {
+    if(p.getId() == id) {
+    p.setFurnizor("Artima");
+    return new ResponseEntity<Produs>(p, new HttpHeaders(), HttpStatus.OK);
   }
+}
+  return new ResponseEntity<String>(null, new
+  HttpHeaders(), HttpStatus.NOT_FOUND);
+}
 
 }

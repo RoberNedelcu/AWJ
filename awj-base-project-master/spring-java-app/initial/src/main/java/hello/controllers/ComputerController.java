@@ -52,17 +52,26 @@ public class ComputerController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/computer", method = RequestMethod.POST)
-  public void addComputer(Computer pc){
-    this.computers.add(pc);
-  }
+  @RequestMapping(value="/computer/{id}/{brand}/{model}", method = RequestMethod.POST)
+  public ResponseEntity addComputer(@PathVariable("id") int id,
+                                @PathVariable("brand") String brand,
+                                @PathVariable("model") String model){
+    Computer pc = new Computer(id, brand, model);
+    computers.add(pc);
 
+
+    return new ResponseEntity<Computer>(pc, new HttpHeaders(), HttpStatus.OK);
+  }
 
   @RequestMapping(value="/computer/{id}", method = RequestMethod.PUT)
-  public void putComputer(@PathVariable("id") int id, Computer pc){
-    pc.setId(id);
-  //computers.update(pc);
+  public ResponseEntity putComputer(@PathVariable("id") int id){
+    for(Computer pc : this.computers) {
+    if(pc.getId() == id) {
+    pc.setModel("GTX 5000");
+    return new ResponseEntity<Computer>(pc, new HttpHeaders(), HttpStatus.OK);
   }
-
+}
+  return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
+}
 
 }

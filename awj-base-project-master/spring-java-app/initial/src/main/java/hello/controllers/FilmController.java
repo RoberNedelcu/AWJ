@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
+
 @RestController
 public class FilmController {
   private List<Film> filme = new ArrayList<Film>();
@@ -52,15 +53,26 @@ public class FilmController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/film", method = RequestMethod.POST)
-  public void addFilm(Film fl){
+  @RequestMapping(value="/film/{id}/{denumire}/{rating}", method = RequestMethod.POST)
+  public ResponseEntity addFilm(@PathVariable("id") int id,
+                                @PathVariable("denumire") String denumire,
+                                @PathVariable("rating") double rating){
+    Film fl = new Film(id,denumire,rating);
     filme.add(fl);
+
+
+    return new ResponseEntity<Film>(fl, new HttpHeaders(), HttpStatus.OK);
   }
 
   @RequestMapping(value="/film/{id}", method = RequestMethod.PUT)
-  public void putFilm(@PathVariable("id") int id, Film f){
-    f.setId(id);
-  //filme.update(f);
+  public ResponseEntity putFilm(@PathVariable("id") int id){
+    for(Film f : this.filme) {
+    if(f.getId() == id) {
+    f.setRating(9.7);
+    return new ResponseEntity<Film>(f, new HttpHeaders(), HttpStatus.OK);
   }
+}
+  return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
+}
 
 }
