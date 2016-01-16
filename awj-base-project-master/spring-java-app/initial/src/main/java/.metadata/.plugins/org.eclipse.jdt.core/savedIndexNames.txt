@@ -1,1 +1,0 @@
-INDEX VERSION 1.127+C:\Users\Robert\Desktop\AWJ\awj-base-project-master\spring-java-app\initial\src\main\java\.metadata\.plugins\org.eclipse.jdt.core
