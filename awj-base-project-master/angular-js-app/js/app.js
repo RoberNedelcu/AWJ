@@ -31,8 +31,9 @@ app.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
         console.log(persoana.id);
         $http({
             method: 'POST',
-            url: url,
-            data: persoana
+          //  url: url,
+            url: url+'/' + id +'/' + name +'/' + age,
+            data: {}  // persoana
         }).then(function successCallback(response) {
             console.log(response);
             $scope.persoane.push(persoana);
@@ -68,15 +69,180 @@ app.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
     $scope.updatePerson = function() {
         $http({
             method: 'PUT',
-            url: url,
+            url: url+'/' + id,
             data: $scope.editPerson
         }).then(function successCallback(response) {
             $scope.editPerson = {};
             console.log(response);
-            // $scope.persoane.push($scope.editPerson);
+            $scope.persoane.push($scope.editPerson);
             // done.
         }, function errorCallback(response) {
             $scope.editPerson = {};
+            console.log(response);
+        });
+    };
+
+}]);
+
+app.controller('FilmController', ['$scope', '$http', function ($scope, $http) {
+
+    var url = 'http://localhost:8080/film';
+
+    $scope.filme = [];
+    $scope.fields = [];
+    $scope.filme = {};
+
+
+    $scope.film = {};
+    $scope.editFilm = {};
+
+
+
+    $http.get(url).then(function successCallback(response) {
+
+        $scope.filme = response.data;
+        $scope.fields = Object.keys(response.data[0]);
+
+        console.log($scope.filme);
+        //console.log($scope.fields);
+
+    });
+
+
+    $scope.addFilm = function(film) {
+        film.id = parseInt(film.id);
+        console.log(film.id);
+        $http({
+            method: 'POST',
+            url: url+'/' + id +'/' + denumire +'/' + rating,
+            data: film
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.filme.push(film);
+            // done.
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    };
+
+
+    $scope.deleteFilm = function(id) {
+        $http({
+            method: 'DELETE',
+            url: url+'/' + id,
+            data: {}
+        }).then(function successCallback(response) {
+            // aici nu intra niciodata ca e functia de succes
+        }, function errorCallback(response) {
+            // aici intra pentru ca da eroare
+            $scope.filme = $scope.filme.filter(function(obj) {
+                return obj.id !== id;
+            });
+        });
+    };
+
+
+
+    $scope.setUpdateFilm = function(film) {
+        $scope.editFilm = film;
+    };
+
+
+    $scope.updateFilm = function() {
+        $http({
+            method: 'PUT',
+            url: url+ '/' + id,
+            data: $scope.editFilm
+        }).then(function successCallback(response) {
+            $scope.editFilm = {};
+            console.log(response);
+            $scope.filme.push($scope.editFilm);
+            // done.
+        }, function errorCallback(response) {
+            $scope.editFilm = {};
+            console.log(response);
+        });
+    };
+
+}]);
+
+
+app.controller('ComputerController', ['$scope', '$http', function ($scope, $http) {
+
+    var url = 'http://localhost:8080/computer';
+
+    $scope.computers = [];
+    $scope.fields = [];
+    $scope.computers = {};
+
+
+    $scope.computer = {};
+    $scope.editComputer = {};
+
+
+
+    $http.get(url).then(function successCallback(response) {
+
+        $scope.computers = response.data;
+        $scope.fields = Object.keys(response.data[0]);
+
+        console.log($scope.computers);
+        //console.log($scope.fields);
+
+    });
+
+
+    $scope.addComputer = function(computer) {
+        computer.id = parseInt(computer.id);
+        console.log(computer.id);
+        $http({
+            method: 'POST',
+            url: url+'/' + id +'/' + brand +'/' + model,
+            data: computer
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.computers.push(computer);
+            // done.
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    };
+
+
+    $scope.deleteComputer = function(id) {
+        $http({
+            method: 'DELETE',
+            url: url+'/' + id,
+            data: {}
+        }).then(function successCallback(response) {
+            // aici nu intra niciodata ca e functia de succes
+        }, function errorCallback(response) {
+            // aici intra pentru ca da eroare
+            $scope.computers = $scope.computers.filter(function(obj) {
+                return obj.id !== id;
+            });
+        });
+    };
+
+
+
+    $scope.setUpdateComputer = function(computer) {
+        $scope.editComputer = computer;
+    };
+
+
+    $scope.updateComputer = function() {
+        $http({
+            method: 'PUT',
+            url: url,
+            data: $scope.editComputer
+        }).then(function successCallback(response) {
+            $scope.editComputer = {};
+            console.log(response);
+            $scope.computers.push($scope.editComputer);
+            // done.
+        }, function errorCallback(response) {
+            $scope.editComputer = {};
             console.log(response);
         });
     };
@@ -155,7 +321,7 @@ app.controller('FilmController', ['$scope', '$http', function ($scope, $http) {
         }).then(function successCallback(response) {
             $scope.editFilm = {};
             console.log(response);
-            // $scope.persoane.push($scope.editPerson);
+            $scope.filme.push($scope.editFilm);
             // done.
         }, function errorCallback(response) {
             $scope.editFilm = {};
@@ -166,41 +332,41 @@ app.controller('FilmController', ['$scope', '$http', function ($scope, $http) {
 }]);
 
 
-app.controller('ComputerController', ['$scope', '$http', function ($scope, $http) {
+app.controller('ProdusController', ['$scope', '$http', function ($scope, $http) {
 
-    var url = 'http://localhost:8080/computer';
+    var url = 'http://localhost:8080/produs';
 
-    $scope.computers = [];
+    $scope.produse = [];
     $scope.fields = [];
-    $scope.computers = {};
+    $scope.produse = {};
 
 
-    $scope.computer = {};
-    $scope.editComputer = {};
+    $scope.produs = {};
+    $scope.editProdus = {};
 
 
 
     $http.get(url).then(function successCallback(response) {
 
-        $scope.computers = response.data;
+        $scope.produse = response.data;
         $scope.fields = Object.keys(response.data[0]);
 
-        console.log($scope.computers);
+        console.log($scope.produse);
         //console.log($scope.fields);
 
     });
 
 
-    $scope.addComputer = function(computer) {
-        computer.id = parseInt(computer.id);
-        console.log(computer.id);
+    $scope.addProdus = function(produs) {
+        produs.id = parseInt(produs.id);
+        console.log(produs.id);
         $http({
             method: 'POST',
-            url: url,
-            data: computer
+              url: url+'/' + id +'/' + denumire +'/' + furnizor,
+            data: produs
         }).then(function successCallback(response) {
             console.log(response);
-            $scope.persoane.push(computer);
+            $scope.produse.push(produs);
             // done.
         }, function errorCallback(response) {
             console.log(response);
@@ -208,7 +374,7 @@ app.controller('ComputerController', ['$scope', '$http', function ($scope, $http
     };
 
 
-    $scope.deleteComputer = function(id) {
+    $scope.deleteProdus = function(id) {
         $http({
             method: 'DELETE',
             url: url+'/' + id,
@@ -217,7 +383,7 @@ app.controller('ComputerController', ['$scope', '$http', function ($scope, $http
             // aici nu intra niciodata ca e functia de succes
         }, function errorCallback(response) {
             // aici intra pentru ca da eroare
-            $scope.computers = $scope.computers.filter(function(obj) {
+            $scope.produse = $scope.produse.filter(function(obj) {
                 return obj.id !== id;
             });
         });
@@ -225,23 +391,23 @@ app.controller('ComputerController', ['$scope', '$http', function ($scope, $http
 
 
 
-    $scope.setUpdateComputer = function(computer) {
-        $scope.editComputer = computer;
+    $scope.setUpdateProdus = function(produs) {
+        $scope.editProdus = produs;
     };
 
 
-    $scope.updateComputer = function() {
+    $scope.updateProdus = function() {
         $http({
             method: 'PUT',
-            url: url,
-            data: $scope.editComputer
+            url: url+ '/' + id,
+            data: $scope.editProdus
         }).then(function successCallback(response) {
-            $scope.editComputer = {};
+            $scope.editProdus = {};
             console.log(response);
-            // $scope.persoane.push($scope.editPerson);
+            $scope.produse.push($scope.editPrpdis);
             // done.
         }, function errorCallback(response) {
-            $scope.editComputer = {};
+            $scope.editProdus = {};
             console.log(response);
         });
     };

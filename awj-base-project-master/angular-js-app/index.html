@@ -84,7 +84,7 @@
            <div class="col-md-3">
                <h2>Editeaza persoana</h2>
 
-               <form action="" method="">
+               <form>
                    <div class="form-group">
                        <label for="attribute1">ID</label>
                        <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="editPerson.id">
@@ -97,7 +97,7 @@
                        <label for="attribute3">AGE</label>
                        <input type="text" class="form-control" id="attribute3" placeholder="AGE" ng-model="editPerson.age">
                    </div>
-                   <button type="submit" class="btn btn-info" ng-click="updatePerson()">Save</button>
+                   <button class="btn btn-info" ng-click="updatePerson()">Save</button>
                </form>
            </div>
 
@@ -105,7 +105,7 @@
            <div class="col-md-3 col-md-offset-6">
                <h2>Adauga o persoana</h2>
 
-               <form action="" method="">
+               <form>
                    <div class="form-group">
                        <label for="attribute1">ID</label>
                        <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="persoana.id">
@@ -173,7 +173,7 @@
            <div class="col-md-3">
                <h2>Editeaza film</h2>
 
-               <form action="" method="">
+               <form>
                    <div class="form-group">
                        <label for="attribute1">ID</label>
                        <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="editFilm.id">
@@ -186,7 +186,7 @@
                        <label for="attribute3">RATING</label>
                        <input type="text" class="form-control" id="attribute3" placeholder="RATING" ng-model="editFilm.rating">
                    </div>
-                   <button type="submit" class="btn btn-info" ng-click="updatePerson()">Save</button>
+                   <button class="btn btn-info" ng-click="updatePerson()">Save</button>
                </form>
            </div>
 
@@ -194,7 +194,7 @@
            <div class="col-md-3 col-md-offset-6">
                <h2>Adauga un film</h2>
 
-               <form action="" method="">
+               <form>
                    <div class="form-group">
                        <label for="attribute1">ID</label>
                        <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="film.id">
@@ -261,7 +261,7 @@
            <div class="col-md-3">
                <h2>Editeaza computer</h2>
 
-               <form action="" method="">
+               <form>
                    <div class="form-group">
                        <label for="attribute1">ID</label>
                        <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="editComputer.id">
@@ -274,7 +274,7 @@
                        <label for="attribute3">MODEL</label>
                        <input type="text" class="form-control" id="attribute3" placeholder="AGE" ng-model="editComputer.model">
                    </div>
-                   <button type="submit" class="btn btn-info" ng-click="updateComputer()">Save</button>
+                   <button class="btn btn-info" ng-click="updateComputer()">Save</button>
                </form>
            </div>
 
@@ -282,7 +282,7 @@
            <div class="col-md-3 col-md-offset-6">
                <h2>Add a computer</h2>
 
-               <form action="" method="">
+               <form>
                    <div class="form-group">
                        <label for="attribute1">ID</label>
                        <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="computer.id">
@@ -304,6 +304,95 @@
    </div>
 
    <hr/>
+
+   <!-- /resources4 -->
+   <div class="container" ng-controller="ProdusController">
+
+       <h1>Produse</h1>
+
+       <h2>List all products</h2>
+
+       <table class="table table-bordered">
+           <tr>
+               <th ng-repeat="field in fields">{{field | uppercase}}</th>
+               <th style="width:210px;">OPTIONS</th>
+           </tr>
+           <tr ng-repeat="produs in produse" data-id="{{produs.id}}">
+               <td>{{ produs.id }}</td>
+               <td>{{ produs.denumire }}</td>
+               <td>{{ produs.furnizor }}</td>
+               <td>
+                   <a href="">
+               <span class="label label-success">
+                 Open
+                 <span class="glyphicon glyphicon-folder-open"></span>
+               </span>
+                   </a>
+                   <a href="">
+                       <button ng-click="setUpdateProdus(produs)" class="btn btn-info btn-xs">
+                           Edit
+                           <span class="glyphicon glyphicon-edit"></span>
+                       </button>
+
+                   </a>
+                   <a href="">
+                       <button ng-click="deleteProdus(produs.id)" class="btn btn-danger btn-xs">
+                           Remove
+                           <span class="glyphicon glyphicon-remove"></span>
+                       </button>
+                   </a>
+               </td>
+           </tr>
+       </table>
+
+       <div class="row">
+           <div class="col-md-3">
+               <h2>Editeaza produs</h2>
+
+               <form>
+                   <div class="form-group">
+                       <label for="attribute1">ID</label>
+                       <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="editProdus.id">
+                   </div>
+                   <div class="form-group">
+                       <label for="attribute2">DENUMIRE</label>
+                       <input type="text" class="form-control" id="attribute2" placeholder="DENUMIRE" ng-model="editProdus.denumire">
+                   </div>
+                   <div class="form-group">
+                       <label for="attribute3">FURNIZOR</label>
+                       <input type="text" class="form-control" id="attribute3" placeholder="FURNIZOR" ng-model="editProdus.furnizor">
+                   </div>
+                   <button class="btn btn-info" ng-click="updateProdus()">Save</button>
+               </form>
+           </div>
+
+
+           <div class="col-md-3 col-md-offset-6">
+               <h2>Add a product</h2>
+
+               <form>
+                   <div class="form-group">
+                       <label for="attribute1">ID</label>
+                       <input type="text" class="form-control" id="attribute1" placeholder="ID" ng-model="produs.id">
+                   </div>
+                   <div class="form-group">
+                       <label for="attribute2">DENUMIRE</label>
+                       <input type="text" class="form-control" id="attribute2" placeholder="DENUMIRE" ng-model="produs.denumire">
+                   </div>
+                   <div class="form-group">
+                       <label for="attribute3">FURNIZOR</label>
+                       <input type="text" class="form-control" id="attribute3" placeholder="FURNIZOR" ng-model="produs.furnizor">
+                   </div>
+
+                   <button ng-click="addProdus(produs)" class="btn btn-success">Add</button>
+               </form>
+           </div>
+       </div>
+
+   </div>
+
+   <hr/>
+
 
    <hr/>
    <div class="container">
